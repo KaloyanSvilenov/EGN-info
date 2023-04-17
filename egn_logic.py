@@ -67,9 +67,14 @@ class Logic:
 
     # true/false check if it is valid
     def check(self):
+
+        if self.egn == '0000000000':
+            return False
+
         mod = 11
 
         while 1:
+
             num = 0
             st = 2
 

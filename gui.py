@@ -62,7 +62,7 @@ class App(ctk.CTk):
                                     height=30
                                     )
         self.button.grid(row=0, column=2, padx=15, pady=10, sticky="sw")
-        self.button.bind('<Return>', self.output)
+        # self.button.bind('<Return>', self.output)
 
         # clear button
         self.button_clear = ctk.CTkButton(master=self, command=self.clear_output_label,

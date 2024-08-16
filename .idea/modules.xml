@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/EGN-info.iml" filepath="$PROJECT_DIR$/.idea/EGN-info.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../rng_scripts/.idea/rng_small_test_codes.iml" filepath="$PROJECT_DIR$/../rng_scripts/.idea/rng_small_test_codes.iml" />
+    </modules>
+  </component>
+</project>

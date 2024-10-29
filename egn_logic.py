@@ -1,3 +1,6 @@
+from re import escape
+
+
 class Logic:
     def __init__(self, egn):
         self.egn = egn
@@ -67,6 +70,9 @@ class Logic:
 
     # true/false check if it is valid
     def check(self):
+        self.egn = self.egn.strip()
+        if not self.egn:
+            return False
 
         if self.egn == '0000000000':
             return False

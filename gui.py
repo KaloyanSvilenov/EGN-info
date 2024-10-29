@@ -3,15 +3,11 @@ from tkinter import messagebox
 import customtkinter as ctk
 import egn_logic as el
 
-ctk.set_appearance_mode("dark")
-
 
 class App(ctk.CTk):
     def __init__(self):
         super().__init__()
-
-        self.inputted_egn = ""
-        self.obj_egn = el.Logic
+        ctk.set_appearance_mode("dark")
 
         # window
         self.geometry("420x250")
@@ -101,33 +97,31 @@ class App(ctk.CTk):
         tk.messagebox.showerror(title="Грешка", message="Моля въведете правилно ЕГН")
         self.entry_egn_input.delete(0, "end")
 
-    def get_formatted_info(self):
-        birthday = self.obj_egn.date() + self.obj_egn.year()
-        region = self.obj_egn.city()
-        bnum = self.obj_egn.baby()
-        sex = self.obj_egn.gender()
+    def get_formatted_info(self, obj, egnInput):
+        birthday = obj.date() + obj.year()
+        region = obj.city()
+        bnum = obj.baby()
+        sex = obj.gender()
         if sex == "М":
             baby = "Момче"
         else:
             baby = "Момиче"
 
-        return self.result.format(self.inputted_egn, birthday, region, sex, baby, bnum)
+        return self.result.format(egnInput, birthday, region, sex, baby, bnum)
 
-    def output(self, event=None):
-        while 1:
-            # gets egn from input
-            self.inputted_egn = self.entry_egn_input.get()
-            self.obj_egn = el.Logic(self.inputted_egn.split()[0])
-            # checks egn
-            if not self.obj_egn.check():
-                self.throw_error()
-                continue
-            break
+    def output(self):
+        # gets egn from input
+        inputted_egn = self.entry_egn_input.get()
+        obj_egn = el.Logic(inputted_egn)
 
-        # output
-        self.label_output.configure(text=self.get_formatted_info())
-        # delete contents of input textbox
-        self.entry_egn_input.delete(0, "end")
+        # checks egn
+        if obj_egn.check():
+            # output
+            self.label_output.configure(text=self.get_formatted_info(obj_egn, inputted_egn))
+            # delete contents of input textbox
+            self.entry_egn_input.delete(0, "end")
+        else:
+            self.throw_error()
 
     def clear_output_label(self):
         # delete contents of input textbox

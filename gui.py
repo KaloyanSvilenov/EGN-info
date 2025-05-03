@@ -51,7 +51,7 @@ class App(ctk.CTk):
                                     hover_color="lightgray",
                                     border_width=2,
                                     border_color="black",
-                                    text="давай",
+                                    text="декодирай",
                                     text_color="black",
                                     font=("Segoe UI", 15),
                                     width=100,

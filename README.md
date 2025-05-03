@@ -69,6 +69,8 @@ Installation file:
 - Click "decode" for results
 - Use "clear" to reset
 
+![EGN-info Interface](resources/screenshots/base_view.jpg)  ![EGN-info Interface](resources/screenshots/usage.jpg)  
+
 ---
 
 ## 🛠️ Билдване / Build
